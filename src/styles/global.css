@@ -1,0 +1,20 @@
+/* src/styles/global.css */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~admin-lte/dist/css/adminlte.min.css';
+
+body {
+  background-color: #f4f6f9;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-right: 10px;
+  margin-top: 10px;
+}
