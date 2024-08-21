@@ -1,8 +1,8 @@
-// src/components/Login.test.tsx
+// src/pages/Login.test.tsx
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Login from './Login';
+import Login from './Login'; // Import default export
 import { AuthProvider } from '../context/AuthContext';
 
 // Mock AuthContext
