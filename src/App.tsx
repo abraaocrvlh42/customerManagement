@@ -22,7 +22,7 @@ const App: React.FC = () => {
       {/* Sidebar */}
       <aside className="main-sidebar sidebar-dark-primary elevation-4">
         <a href="/" className="brand-link">
-          <span className="brand-text font-weight-light">My App</span>
+          <span className="brand-text font-weight-light">Customer Management</span>
         </a>
 
         <div className="sidebar">

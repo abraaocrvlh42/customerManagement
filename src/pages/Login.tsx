@@ -1,8 +1,8 @@
 // src/pages/Login.tsx
 
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,18 +16,24 @@ export const Login: React.FC = () => {
       await login(email, password);
       navigate('/dashboard');
     } catch (error) {
-      console.error('Error logging in:', error);
+      alert('Failed to log in');
     }
   };
 
+  const handleCreateAccount = () => {
+    navigate('/register');
+  };
+
   return (
-    <div className="login-page">
+    <div className="hold-transition login-page">
       <div className="login-box">
         <div className="card card-outline card-primary">
           <div className="card-header text-center">
-            <h1>Login</h1>
+            <a href="/" className="h1"><b>My</b>App</a>
           </div>
           <div className="card-body">
+            <p className="login-box-msg">Sign in to start your session</p>
+
             <form onSubmit={handleSubmit}>
               <div className="input-group mb-3">
                 <input
@@ -36,7 +42,6 @@ export const Login: React.FC = () => {
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -51,7 +56,6 @@ export const Login: React.FC = () => {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  required
                 />
                 <div className="input-group-append">
                   <div className="input-group-text">
@@ -60,8 +64,19 @@ export const Login: React.FC = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-12">
-                  <button type="submit" className="btn btn-primary btn-block">Login</button>
+                <div className="col-8">
+                  <button
+                    type="button"
+                    onClick={handleCreateAccount}
+                    className="btn btn-secondary btn-block"
+                  >
+                    Create Account
+                  </button>
+                </div>
+                <div className="col-4">
+                  <button type="submit" className="btn btn-primary btn-block">
+                    Sign In
+                  </button>
                 </div>
               </div>
             </form>
@@ -71,3 +86,4 @@ export const Login: React.FC = () => {
     </div>
   );
 };
+

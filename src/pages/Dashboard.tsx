@@ -7,7 +7,7 @@ import { useAuth } from '../context/AuthContext';
 interface Customer {
   id: string;
   name: string;
-  phone: string;  // Alterado para string
+  phone: string;
   birthdate: string;
   income: number;
   status: boolean;
